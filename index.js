@@ -1,6 +1,7 @@
 // Import stylesheets
 import './style.css';
 
+//import { var1 } from './module1.js'
 // Write Javascript code!
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
@@ -113,3 +114,22 @@ console.log(`First : ${first}, Second: ${second}, Third: ${third}`);
 for (let [a, b] of [[20, 30]]) {
   console.log(`values are ${a} and ${b}`);
 }
+
+7; //Named Import
+
+import {
+  baseVariable1,
+  baseVariable2,
+  baseVariable3 as alias,
+  namedExportFunc,
+  namedExportFunction,
+} from './base.js';
+
+//default are imported without curly braces
+import someDefault from './base.js';
+console.log(`Imported Variables are ${baseVariable1}, ${baseVariable2}, ${alias}, 
+${someDefault}`);
+//output: Imported Variables are 100, 40, alias,default
+
+console.log(`Import Named Export  ${namedExportFunc(2, 9)}`);
+console.log(`Import Named Export  ${namedExportFunction(2, 9)}`);
